@@ -1,0 +1,90 @@
+use('chat_dev');
+
+const devs = db.devs
+const chats = db.chats
+
+/*- Scripts Tests -*/
+/*
+devs.insertMany([
+    {
+        name: "Kelvin Ribeiro",
+        user_name: "Kelvin-rnov",
+        password: "hash#"
+    },
+    {
+        name: "NicolasScariot",
+        user_name: "NicolasScariot",
+        password: "hash#"
+    },
+    {
+        name: "Diogo Lima",
+        user_name: "diogolimalucasdev",
+        password: "hash#"
+    },
+    {
+        name: "Edmilson Silva",
+        user_name: "Edmilson1406",
+        password: "hash#"
+    },
+    {
+        name: "Guilherme Severiano",
+        user_name: "GuilhermeSeveriano",
+        password: "hash#"
+    },
+    {
+        name: "Gustavo Apolonio",
+        user_name: "Gustavo-Apolonio",
+        password: "hash#"
+    }
+])
+
+chats.insertMany([
+    // chat entre Diogo e Edmilson
+    {
+        "ids_users": [
+            "61a13bdf9018f90f26df462c", 
+            "61a13bdf9018f90f26df462d"
+        ],
+        "messages": {
+            "2021-11-26": [{
+                "message": "Salvee",
+                "time": "16:58:00",
+                "id_sender": "61a13bdf9018f90f26df462d"
+            }]
+        }
+    },
+    // chat entre Gustavo e Nicolas
+    {
+        "ids_users": [
+            "61a13bdf9018f90f26df462f", 
+            "61a13bdf9018f90f26df462b"
+        ],
+        "messages": {
+            "2021-11-24": [{
+                "message": "Tá salvado?",
+                "time": "13:00:00",
+                "id_sender": "61a13bdf9018f90f26df462f"
+            }]
+        }
+    },
+    // chat entre Gustavo e Kelvin
+    {
+        "ids_users": [
+            "61a13bdf9018f90f26df462f", 
+            "61a13bdf9018f90f26df462a"
+        ],
+        "messages": {
+            "2021-11-24": [{
+                "message": "Opa",
+                "time": "13:30:00",
+                "id_sender": "61a13bdf9018f90f26df462a"
+            },
+            {
+                "message": "Opa, de boa?",
+                "time": "13:30:15",
+                "id_sender": "61a13bdf9018f90f26df462f"
+            }]
+        }
+    }
+])
+*/
