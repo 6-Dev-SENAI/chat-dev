@@ -6,16 +6,15 @@ export default class DevDatabase {
     return resp;
   }
 
-  async login(gitUser, password) {
-    const resp = await Dev.findOne({
+  async getUser(gitUser) {
+    const user = await Dev.findOne({
       user_name: gitUser,
-      password,
     });
-    return resp;
+    return user;
   }
 
   async getUsersName() {
-    const resp = await Dev.find({}, '-_id user_name');
-    return resp.map(dev => dev.user_name);
+    const resp = await Dev.find({}, "-_id user_name");
+    return resp.map((dev) => dev.user_name);
   }
 }

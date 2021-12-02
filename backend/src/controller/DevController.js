@@ -49,4 +49,31 @@ route.post("/create", async (req, res) => {
   }
 });
 
+route.post("/login", async (req, res) => {
+  try {
+    const reqBody = req.body || { user_name: "", password: "" };
+
+    const dev = await srv.login(reqBody.user_name, reqBody.password);
+
+    if (!dev || !mongoose.isValidObjectId(dev._id)) {
+      return res
+        .status(404)
+        .send(new Error(404, "Usuário ou senha incorreto."));
+    }
+
+    const token = jwt.sign({ dev_password: dev.password }, process.env.TOKEN);
+
+    const devResp = cnv.ToResponse(dev);
+
+    const resp = {
+      token,
+      dev: devResp,
+    };
+
+    return res.status(200).send(resp);
+  } catch (error) {
+    return res.status(400).send(new Error(400, error));
+  }
+});
+
 export default route;
